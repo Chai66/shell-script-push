@@ -1,11 +1,9 @@
 #!/bin/bash
 
-PERSON1="Ramesh"
-PERSON2="Suresh"
+VAR_1=GIT
+VAR_2=VS_CODE
 
 
-echo "$PERSON1: Hello $PERSON2, Good Morning"
-echo "$PERSON2: Hi $PERSON1, very good Morning"
-echo "$PERSON1: How are you $PERSON2?"
-echo "$PERSON2: Iam good $PERSON1, How are you?"
-ech0 "Thankyou"
+echo "Code was edited in $VAR_2 and pushed to $VAR_1, It is working"
+echo "but when checked in super putty using $VAR_1 PULL, It is not working"
+ech0 "Appreciate if you can help,Thanks in Advance!"
