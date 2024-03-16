@@ -10,9 +10,9 @@ VAR_1=$(id -u)
     fi
 
 yum install mysql -y
-VAR_1=$(id -u)
+#VAR_1=$(id -u)
 
-    if [ $VAR_1 -ne 0 ]
+    if [ $? -ne 0 ]
     then 
         echo "ERROR: Installing mysql failed"
     else
@@ -20,9 +20,9 @@ VAR_1=$(id -u)
     fi
 
     yum install git -y
-VAR_1=$(id -u)
+#VAR_1=$(id -u)
 
-    if [ $VAR_1 -ne 0 ]
+    if [ $? -ne 0 ]
     then 
         echo "ERROR: Installing GIT failed"
     else
