@@ -12,18 +12,18 @@ LOGFILE="/tmp/$0-$TIMESTAMP.log"
 VALIDATE (){
     if [ $VAR_1 -ne 0 ]
     then
-        echo "ERROR: $2 ... $R FAILED $N"
+        echo -e "ERROR: $2 ... $R FAILED $N"
     else
-        echo "$2 ... $G SUCCESS $N"
+        echo -e "$2 ... $G SUCCESS $N"
     fi
 }
 
     if [ $VAR_1 -ne 0 ]
     then 
-        echo "$R ERROR: Please run scrit with root access $N"
+        echo -e "$R ERROR: Please run scrit with root access $N"
         exit 1 # you can give other than zero
     else
-        echo " $G Installed suceessfully $N"
+        echo -e " $G Installed suceessfully $N"
     fi
 
 yum install mysql -y &>> $LOGFILE
