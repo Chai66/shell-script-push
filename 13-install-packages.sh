@@ -8,20 +8,17 @@ Y="\e[33m"
 N="\e[0m"
 
 TIMESTAMP=$(date +%F-%H-%M-%S)
-LOGFILE= "/tmp/$0-$TIMESTAMP.log"
+LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
 echo "Script started executing at $TIMESTAMP" &>> $LOGFILE
 
-VALIDATE() {
-    if ($1 -ne 0)
+VALIDATE(){
+    if [ $1 -ne 0 ]
     then 
         echo -e "$2 ... $R FAILED $N"
-        else 
-            if ($1 -e 0)
-            echo -e "$2 ... $G SUCCESS $N"
-            fi
-
-
+    else 
+        echo -e "$2 ... $G SUCCESS $N"
+    fi
 }
 
 
