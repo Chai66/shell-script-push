@@ -5,7 +5,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-SOURCE_DIR="/tmp/shellscript-logs"
+SOURCE_DIR="/tmp/shellscripts-logs"
 
 if [ ! -d $SOURCE_DIR ]  # ! denotes opposite and -d denotes directory exists or not
 then 
