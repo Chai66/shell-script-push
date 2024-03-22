@@ -5,7 +5,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-FILE="/tmp/passwd"
+FILE="/etc/passwd"
 
 if [ ! -f $FILE ]  # ! denotes opposite and -f denotes directory exists or not
 then 
