@@ -11,9 +11,9 @@ do
     partition=$(echo $line | awk '{print $1F}') # 1F is to extract partition of disk which includes ebs vol
     if [ $usage -ge $DISK_THRESHOLD ]
     then
-        message+="High disk usage on $partition: $usage\n" # += is not override next rows instaed append the lines
+        message+="High disk usage on $partition: $usage\n" # += is not override next rows instaed append, \n is to give row count
     fi
 
 done <<< $DISK_USAGE
 
-echo "Message: $message"
+echo -e "Message: $message" # since spl chars like \n is introduced, need to enable -e to echo statement
