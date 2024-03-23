@@ -9,7 +9,7 @@ while IFS= read line
 do
     usage=$(echo $line | awk '{print $6F}' | cut -d % -f1) # awk print will give column fro the result, cut -d will erase the percentage from the result
     partition=$(echo $line | awk '{print $1F}') # 1F is to extract partition of disk which includes ebs vol
-    if [ if $usage -gt $DISK_THRESHOLD ]
+    if [ $usage -ge $DISK_THRESHOLD ]
     then
         message+="High disk usage on $partition: $usage\n" # += is not override next rows instaed append the lines
     fi
