@@ -18,7 +18,17 @@ while getopts "n:w:h" opt; do
     case $opt in
         n) NAME="$OPTARG";;
         w) WISHES="$OPTARG";;
-        h|*) USAGE; exit;; 
+        \?) echo "invalid options: -"$OPTARG"" >&2; exit;; # Invalid arguments
+        :) USAGE; exit;; # empty arguments
+        h) USAGE; exit;; # help
     esac
 done
 # USAGE is a function
+
+if [ -z "$NAME" ] || [ -z "$WISHES" ]; then
+    echo "ERROR: Both -n and -w are mandatory options"
+    USAGE  # After getting arror it will look for USAGE
+    exit 1
+fi
+
+echo "Hello $NAME. $WISHES. I have been learning shell script"
